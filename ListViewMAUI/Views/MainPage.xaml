@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ListViewMAUI"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.ListView;assembly=Syncfusion.Maui.ListView"
+             x:Class="ListViewMAUI.MainPage">
+    <ContentPage.BindingContext>
+        <local:ContactsViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <syncfusion:SfListView x:Name="listView"
+                                   AutoFitMode="Height"
+                                   ItemSpacing="5"
+                                   ItemsSource="{Binding UserInfo}">
+                <syncfusion:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="White"
+                            Stroke="#DDDDDD"
+                            StrokeThickness="1"
+                            Margin="10,5"
+                            Padding="15"
+                            StrokeShape="RoundRectangle 12">
+                        <Grid RowSpacing="8">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0"
+                                   Text="Username:"
+                                   FontAttributes="Bold"
+                                   TextColor="#333"
+                                   FontSize="16" />
+                            <Label Grid.Row="0"
+                                   Text="{Binding [username]}"
+                                   Grid.Column="1"
+                                   TextColor="#555"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   Margin="100,0,0,0" />
+
+                            <Label Grid.Row="1"
+                                   Text="Website:"
+                                   FontAttributes="Bold"
+                                   TextColor="#333"
+                                   FontSize="16" />
+                            <Label Grid.Row="1"
+                                   Text="{Binding [website]}"
+                                   Grid.Column="1"
+                                   TextColor="#555"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   Margin="100,0,0,0" />
+
+                            <Label Grid.Row="2"
+                                   Text="Phone:"
+                                   FontAttributes="Bold"
+                                   TextColor="#333"
+                                   FontSize="16" />
+                            <Label Grid.Row="2"
+                                   Text="{Binding [phone]}"
+                                   Grid.Column="1"
+                                   TextColor="#555"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   Margin="100,0,0,0" />
+
+                            <Label Grid.Row="3"
+                                   Text="Email:"
+                                   FontAttributes="Bold"
+                                   TextColor="#333"
+                                   FontSize="16" />
+                            <Label Grid.Row="3"
+                                   Text="{Binding [email]}"
+                                   Grid.Column="1"
+                                   TextColor="#555"
+                                   FontSize="16"
+                                   HorizontalOptions="Start"
+                                   Margin="100,0,0,0" />
+                        </Grid>
+                    </Border>
+                    </DataTemplate>
+                </syncfusion:SfListView.ItemTemplate>
+            </syncfusion:SfListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
